@@ -6,9 +6,8 @@ public class Student {
     private double gpa;
 
     public Student(int studentId, String fullName, double gpa) {
-        if (fullName.length() > 50 || gpa < 0.0 || gpa > 4.0) {
+        if (fullName.length() > 50 || gpa < 0.0 || gpa > 4.0)
             throw new IllegalArgumentException("Invalid name or GPA");
-        }
         this.studentId = studentId;
         this.fullName = fullName;
         this.gpa = gpa;
