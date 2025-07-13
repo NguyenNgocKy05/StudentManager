@@ -4,7 +4,6 @@ public class Student {
     private int studentId;
     private String fullName;
     private double gpa;
-    // update
 
     public Student(int studentId, String fullName, double gpa) {
         if (fullName.length() > 50 || gpa < 0.0 || gpa > 4.0)
@@ -14,16 +13,28 @@ public class Student {
         this.gpa = gpa;
     }
 
-    public int getStudentId() { return studentId; }
-    public String getFullName() { return fullName; }
-    public double getGpa() { return gpa; }
+    public int getStudentId() {
+        return studentId;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public double getGpa() {
+        return gpa;
+    }
 
     public void setFullName(String name) {
-        if (name.length() <= 50) this.fullName = name;
+        if (name.length() <= 50) {
+            this.fullName = name;
+        }
     }
 
     public void setGpa(double gpa) {
-        if (gpa >= 0.0 && gpa <= 4.0) this.gpa = gpa;
+        if (gpa >= 0.0 && gpa <= 4.0) {
+            this.gpa = gpa;
+        }
     }
 
     @Override

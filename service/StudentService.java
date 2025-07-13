@@ -6,10 +6,11 @@ import java.util.ArrayList;
 public class StudentService {
     private ArrayList<Student> students = new ArrayList<>();
 
-    public void addStudent(Student s) throws Exception {
+    public void addStudent(Student s) throws DuplicateStudentException {
         for (Student stu : students) {
-            if (stu.getStudentId() == s.getStudentId())
-                throw new Exception("Duplicate ID");
+            if (stu.getStudentId() == s.getStudentId()) {
+                throw new DuplicateStudentException("Duplicate ID");
+            }
         }
         students.add(s);
     }
@@ -21,15 +22,17 @@ public class StudentService {
     public ArrayList<Student> searchStudent(String name) {
         ArrayList<Student> result = new ArrayList<>();
         for (Student s : students) {
-            if (s.getFullName().toLowerCase().contains(name.toLowerCase()))
+            if (s.getFullName().toLowerCase().contains(name.toLowerCase())) {
                 result.add(s);
+            }
         }
         return result;
     }
 
     public void displayStudents() {
         System.out.printf("%-10s %-30s %-5s\n", "ID", "Name", "GPA");
-        for (Student s : students)
+        for (Student s : students) {
             System.out.println(s);
+        }
     }
 }
