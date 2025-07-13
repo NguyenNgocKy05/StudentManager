@@ -4,8 +4,9 @@ import model.Student;
 import java.util.ArrayList;
 
 public class StudentService {
-    // ❌ LỖI 1: Vi phạm Java naming convention
-    private double GPA; // Codacy sẽ báo nên đặt tên theo camelCase (gpa)
+
+    // ❌ LỖI 1: Vi phạm naming convention
+    private double GPA; // Codacy sẽ yêu cầu đổi thành camelCase: gpa
 
     private ArrayList<Student> students = new ArrayList<>();
 
@@ -39,25 +40,21 @@ public class StudentService {
         }
     }
 
-    // ❌ LỖI 2: Phương thức quá dài và phức tạp (code smell)
-    public void dummyMethod() {
+    // ❌ LỖI 2: Phương thức quá dài (quá phức tạp)
+    public void dummyComplexMethod() {
         for (int i = 0; i < 10; i++) {
-            if (i % 2 == 0) {
-                System.out.println("Even");
-            } else {
-                System.out.println("Odd");
-            }
+            if (i % 2 == 0) System.out.println("Even");
+            else System.out.println("Odd");
         }
-
         int a = 1, b = 2, c = 3;
-        if (a + b > c) System.out.println("Logic A");
-        if (b + c > a) System.out.println("Logic B");
-        if (a + c > b) System.out.println("Logic C");
+        if (a + b > c) System.out.println("A");
+        if (b + c > a) System.out.println("B");
+        if (a + c > b) System.out.println("C");
     }
 
     // ❌ LỖI 3: Biến không sử dụng
-    public void demo() {
-        int unusedVariable = 123456;
-        System.out.println("Demo method runs");
+    public void unusedDemo() {
+        int unused = 42;
+        System.out.println("Demo function.");
     }
 }
